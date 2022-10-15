@@ -1,17 +1,23 @@
-#include<stdio.h>
-int main()
-{
-    int num,r,sum=0,temp;
-    scanf("%d",&num);
-    temp=num;
-    while(num>0){
-        r=num%10;
-        sum=sum*10+r;
+#include<iostream>
+using namespace std;
+bool fun(int num){
+    int sum=0;
+    int temp=num;
+    while(num){
+        sum=sum*10+num%10;
         num=num/10;
-        
-    }if(temp==sum){
-        printf("True");
+    }
+    if(sum==temp)
+    return true;
+    else
+    return false;
+}
+int main(){
+    int n;
+    cin>>n;
+    if(fun(n)){
+        cout<<"True";
     }else{
-        printf("False");
+        cout<<"False";
     }
 }
